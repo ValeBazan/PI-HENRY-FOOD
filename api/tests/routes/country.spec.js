@@ -22,3 +22,23 @@ describe('Recipe routes', () => {
     );
   });
 });
+
+
+// describe('POST' '/recipes', () => {
+//   it('Agrega un nuevo Post', () => {
+//     const post = { name: 'macaroni and cheese', summary: 'The famous mac and cheese has boiled noodles and a cheese cream that is generally made with melted cheddar cheese, although it could be made with other cheeses, but the typical flavor of this dish is given by cheddar.'};
+//     return addPost(post)
+//       .then((postReturned) => {
+//         expect(postReturned).to.deep.equal(post);
+//       });
+//   });
+
+//   it('Reports missing parameter name' `name`', () => {
+//     return req(POST, 404, { summary: 'summary'});
+//   });
+
+//   it('Reports missing parameter name' `summary`', () => {
+//     return req(POST, 404, { name: 'name'});
+//   });
+
+// });

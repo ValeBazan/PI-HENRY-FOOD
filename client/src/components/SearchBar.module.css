@@ -1,0 +1,25 @@
+.searchBar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #5e6472;
+    height: 10vh;
+}
+
+.searchBar input {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    width: 200px;
+    height: 4vh;
+    margin-right: 1.5rem;
+    border-radius: 5px;
+  }
+
+  .searchBar button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    width: 200px;
+    height: 4vh;
+    margin-right: 1.5rem;
+    border-radius: 5px;
+  }

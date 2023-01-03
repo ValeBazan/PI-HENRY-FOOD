@@ -1,0 +1,57 @@
+.home{
+    background-color: #faf3dd;
+}
+.title{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #5e6472;
+    color: whitesmoke;
+}
+
+.bar{
+    background-color: #5e6472;
+    margin-bottom: 50px;
+}
+
+.filterSort{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #5e6472;
+    height: 10vh;
+}
+.filterSort select {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    width: 200px;
+    height: 4vh;
+    margin-right: 1.5rem;
+    border-radius: 5px;
+  }
+
+
+
+
+.buttonRefresh{
+    color: rgb(231, 218, 218);
+    background-color: #ce5249;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 5px;
+    margin-top: 13px;
+    border-radius: 3px;
+    border: 2px rgb(231, 218, 218);
+    border-bottom: 30px;
+    box-shadow: 3px 3px 5px 1px rgb(112, 44, 44);
+    cursor: pointer;
+}
+
+.cards{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: row;
+    width: 1350px;
+    align-items: center;
+}

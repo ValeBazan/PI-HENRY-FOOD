@@ -1,0 +1,22 @@
+.paginado {
+    list-style: none;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.numberPage {
+    display: inline-block;
+    margin-right: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+}
+
+.buttonNumber{
+    color: rgb(231, 218, 218);
+    background-color: #ce5249;
+    border-radius: 2px;
+    border: 2px rgb(231, 218, 218);
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    cursor: pointer;
+}
