@@ -93,6 +93,10 @@
     box-shadow: 3px 3px 5px 1px rgb(112, 44, 44);
     cursor: pointer;
 }
+ .submitButton:disabled{
+    background-color: #fcbf49;
+ }
+
 
 .submitButton:hover {
     color:#ce5249;
@@ -109,4 +113,10 @@
 
 .liDiet{
 list-style: none;
+}
+
+.errors{
+    font-size: 15px;
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

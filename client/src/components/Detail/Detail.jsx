@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getDetail } from "../actions";
+import { getDetail } from "../../actions";
 import { useEffect } from "react";
 import s from './Detail.module.css'
 
@@ -20,28 +20,39 @@ export default function Detail(){
     console.log(id)
     console.log(myRecipe)
     return(
-        <div className={s.detail}> 
+        <div className={s.mainDetail}> 
         
         {myRecipe.length >0 ? 
             
              <div key={myRecipe[0].id}>
-
+            
+                    <Link to='/home'>
+                        <button className={s.backButton}>Back</button>
+                    </Link>
                 <h1 className={s.name}>{myRecipe[0].name}</h1>
-                <img className={s.image} src={myRecipe[0].image} alt="" />
-                <p>{myRecipe[0].summary.replace(/<[^>]*>/g, '')}</p>
-                <h3>Health Score: {myRecipe[0].healthScore}</h3>
-                {myRecipe[0].diets.map(el=> <h3 key={el}>{el}</h3>)} 
-                {myRecipe[0].steps.map(el=> <p key={el}>{el}</p>)}
-                <h3>Dish type:</h3>
-                {myRecipe[0].types.map(el=> <p key={el}>{el}</p>)}
-        
+                <div className={s.detailContainer}>
+                    <div className={s.leftContainer}>
+                        <img className={s.image} src={myRecipe[0].image} alt="" />
+                        <h4 className={s.healthScore}>Health Score: {myRecipe[0].healthScore}</h4>
+                    </div>
+                    <div className={s.rightContainer}>
+
+                    <p className={s.detailSummary}>{myRecipe[0].summary.replace(/<[^>]*>/g, '')}</p>
+                    <div>
+                    <h4 className={s.dietTypes}>Diet Types</h4>
+                    {myRecipe[0].diets.map(el=> <li className={s.detailDiets} key={el}>{el}</li>)} 
+                    </div>
+                    <h4>Instructions</h4>
+                    <ol>{myRecipe[0].steps.map(el=> <li className={s.detailSteps} key={el}>{el}</li>)}</ol>
+                    {/* <h4>Dish type:</h4>
+                    {myRecipe[0].types.map(el=> <li className={s.detailSteps} key={el}>{el}</li>)} */}
+                    </div>
+                </div>
+            
             </div>:<p>Loading...</p>
             } 
 
            
-        <Link to='/home'>
-            <button>Back</button>
-        </Link>
 
             </div>
     )

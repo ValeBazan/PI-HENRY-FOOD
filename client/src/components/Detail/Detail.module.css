@@ -1,0 +1,99 @@
+.mainDetail {
+	background:linear-gradient(45deg, #DDDDDD 0%, #EFEFEF 50%, #FFFFFF 100%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 1800px;
+}
+
+.detailContainer{
+    display: flex;
+    padding: 0 2rem;
+}
+.name{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 25px;
+	font-style: inherit;
+	color:  #ce5249;
+	margin: 0.5rem 0;
+	text-decoration: none;
+}
+.leftContainer {
+	margin: 0 2rem;
+}
+
+.leftContainer img {
+	max-width:  40vw;
+	margin-top: 1.5rem;
+	box-shadow: rgb(0 0 0 / 25%) 0px 12px 8px, rgb(0 0 0 / 12%) 0px -12px 30px,
+		rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px,
+		rgb(0 0 0 / 9%) 0px -3px 5px;
+	border-radius: 5px;
+}
+
+.rightContainer {
+	margin: 0 2rem;
+}
+
+.rightContainer h2 {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-transform: uppercase;
+	color: black;
+	text-decoration: none;
+	text-align: left;
+}
+
+.detailSummary {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-align: left;
+	line-height: 1.5em;
+	text-decoration: none;
+	color: black;
+	
+	font-size: 14px;
+}
+
+.detailSteps {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-align: left;
+	line-height: 1.5em;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.dietsTypes{
+	text-align: left;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-align: left;
+	line-height: 1.5em;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.detailDiets{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-align: left;
+	line-height: 1.5em;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+
+
+.backButton{
+    color: rgb(231, 218, 218);
+    background-color: #ce5249;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 5px;
+    margin-top: 13px;
+    border-radius: 3px;
+    border: 2px rgb(231, 218, 218);
+    border-bottom: 30px;
+    box-shadow: 3px 3px 5px 1px rgb(112, 44, 44);
+    cursor: pointer;
+	margin-left: 1100px;
+}
+

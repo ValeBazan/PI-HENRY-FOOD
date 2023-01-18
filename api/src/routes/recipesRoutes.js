@@ -70,7 +70,7 @@ router.post('/', async(req,res)=>{
     const dietDb = await Diet.findAll({
         where: {name: diet}    //cuando name = diet que llega por body
     })
-    await newRecipe.addDiet(dietDb);
+    await newRecipe.addDiet(dietDb);  //me traigo de la tabla las dietas 
     res.status(200).send('Recipe created successfully');  
  } catch (error){
     //next(error)

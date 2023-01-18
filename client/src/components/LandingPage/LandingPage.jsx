@@ -6,9 +6,10 @@ export default function LandingPage(){
     return(
     <div className={s.page}>
         <div className={s.landing}>
-            <h1> Welcome! Find recipes according to your preferences or diet, and add your favorite recipes. </h1>
+            <h1> Welcome to Henry Food! </h1>
+            <h3>Where you can find the best recipes and create your own...</h3>
             <Link to='/home'>
-                <button className={s.homeButton}>Let's go!</button>
+                <button className={s.homeButton}>Start</button>
             </Link>
         </div>
     </div>

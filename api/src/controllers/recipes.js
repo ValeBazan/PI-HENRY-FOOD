@@ -1,12 +1,12 @@
 const axios = require("axios");
 const db = require("../db");
 const { Diet, Recipe } = require("../db");
-const { API_KEY1, API_KEY2, API_KEY3, API_KEY4, API_KEY5, API_KEY6 } = process.env;
+const { API_KEY1, API_KEY2, API_KEY3, API_KEY4, API_KEY5, API_KEY6, API_KEY7 } = process.env;
 
 
 const getApiInfo = async()=>{
     
-    const apiUrl = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY5}&number=100&offset=100&addRecipeInformation=true`);
+    const apiUrl = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY3}&number=100&offset=100&addRecipeInformation=true`);
     //console.log(apiUrl);
     
     const apiInfo = await apiUrl.data.results.map(el => {

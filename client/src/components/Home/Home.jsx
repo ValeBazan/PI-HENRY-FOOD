@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getRecipes, filterByDiet, alphabeticalSort, scoreSort, getDiets} from "../actions"
+import { getRecipes, filterByDiet, alphabeticalSort, scoreSort, getDiets} from "../../actions"
 import { Link } from "react-router-dom";
-import Card from "./Card";
-import Paginated from "./Paginated";
-import SearchBar from "./SearchBar";
+import Card from "../Card/Card";
+import Paginated from "../Paginated/Paginated";
+import SearchBar from "../SearchBar/SearchBar";
 import s from "./Home.module.css"
 
 let prevId = 1;
@@ -20,7 +20,7 @@ export default function Home(){
     
     
     const [currentPage,setCurrentPage] = useState(1); //pag actual
-    const [recipesPerPage, setRecipesPerPage] = useState(9); //guardo cuantos personajes quiero por pag
+    const [recipesPerPage, setRecipesPerPage] = useState(9); //guardo cuantas recetas quiero por pag
 
     const indexLastRecipe = currentPage * recipesPerPage;
     const indexFirstRecipe = indexLastRecipe - recipesPerPage;
@@ -32,7 +32,7 @@ export default function Home(){
 
     useEffect(()=>{
         dispatch(getRecipes()) //equivalente a mapDispatchToProps, traigo del estado las recetas cuando el componente se monta
-        dispatch(getDiets()) //ver si hace falta!!!!!!!!!
+        dispatch(getDiets()) 
     }, [dispatch])
 
     function handleClick(e){
@@ -58,12 +58,44 @@ export default function Home(){
         setOrder(`Order ${e.target.value}`);
     }
 
+    let pagesTotals= Math.ceil(allRecipes.length/recipesPerPage)
+    console.log(pagesTotals)
+
+    function nextPage(e){
+        if(currentPage === pagesTotals){ 
+            setCurrentPage(currentPage)
+        } else {
+            setCurrentPage(currentPage + 1)
+            }
+        console.log(currentPage)
+    }
+
+    function prevPage(e){
+        if(currentPage === 1){ 
+            setCurrentPage(currentPage)
+        } else {
+            setCurrentPage(currentPage - 1)
+            }
+        console.log(currentPage)
+    }
+
+    function firstPage(e){
+        setCurrentPage(1)
+        }
+
+
+    function lastPage(e){
+        setCurrentPage(pagesTotals)
+        }
+
+
+
     return(
         <div className={s.home}>
           <div className={s.bar}>
-            <Link to= {'/recipe'}>Add new recipe!</Link>  
-            <h1 className={s.title}>Let's do it!</h1>
             <button className={s.buttonRefresh} onClick={e=> {handleClick(e)}}>Refresh recipes</button>
+            <button className={s.buttonRefresh}><Link to= {'/recipe'}>Create Recipe!</Link></button>  
+            <h1 className={s.title}>Henry Food</h1>
             <div className={s.filterSort}>
                 <select onChange={e=> handleAlphabeticalSort(e)}>
                     <option>Alphabetical</option>
@@ -94,23 +126,35 @@ export default function Home(){
           <div className={s.cards}>
            {currentRecipes?.map((c)=>{
                return(
-                   <div key={prevId++}>
+                   <div className={s.card} key={prevId++}>
                 <Link to={'/recipes/' + c.id}>
-                <Card key= {c.id} name={c.name} image={c.image} diets={c.diets}></Card>
+                <Card key= {c.id} name={c.name} image={c.image} ></Card>
                 </Link>
+                    <div className={s.diets}>{c.diets? c.diets.join(', ') : 'Diets not found!'}</div>
+                <div> 
+            </div>
                 </div>
             )
         })}
 
         </div>
-        <Paginated 
-        recipesPerPage={recipesPerPage}
-        allRecipes={allRecipes.length}
-        paged= {paged}
-        /> 
-         
-
+        <div className={s.pg}>
+            <Paginated 
+            recipesPerPage={recipesPerPage}
+            allRecipes={allRecipes.length}
+            paged= {paged}
+            actualPage = {currentPage}
+            /> 
+            <div className={s.nextprev}>
+            <button className={s.btnNextPrev} onClick={e=> {firstPage(e)}}>{'<<'}</button>
+            <button className={s.btnNextPrev} onClick={e=> {prevPage(e)}}>prev</button>
+            <button className={s.btnNextPrev} onClick={e=> {nextPage(e)}}>next</button>
+            <button className={s.btnNextPrev} onClick={e=> {lastPage(e)}}>{'>>'}</button>
+            </div>
         </div>
+        
+        </div>
+        
     )
 }
 
